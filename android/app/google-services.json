@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "142611589211",
+    "project_id": "child-health-56d63",
+    "storage_bucket": "child-health-56d63.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:142611589211:android:ffcea33f55e1d9511ef77e",
+        "android_client_info": {
+          "package_name": "com.example.child_hearth"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvBMyMfsnF8mCzP7V9cHOVNWo0W5Gaqzw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
