@@ -1,4 +1,6 @@
+import 'package:child_hearth/screens/type_of_vaccine.dart';
 import 'package:flutter/material.dart';
+import 'package:swipeable_page_route/swipeable_page_route.dart';
 
 class button_type_vaccine extends StatelessWidget {
   const button_type_vaccine({
@@ -9,7 +11,9 @@ class button_type_vaccine extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        print('object');
+        Navigator.of(context).push(SwipeablePageRoute(
+          builder: (BuildContext context) => TypeOfVaccine(),
+        ));
       },
       style: ElevatedButton.styleFrom(
         backgroundColor: Colors.white, // White background

@@ -16,27 +16,23 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    final screenHeight = MediaQuery.of(context).size.height;
 
-    return SingleChildScrollView(
+    return const SingleChildScrollView(
       child: SafeArea(
         child: Column(
           children: [
-            const profile_widget(),
-            const SizedBox(height: 20),
+            profile_widget(),
+            SizedBox(height: 20),
             infor_child_widget(
-                screenWidth: screenWidth,
-                screenHeight: screenHeight
             ),
-            const SizedBox(height: 25),
-            const button_register_widget(),
-            const SizedBox(height: 20,),
-            const button_type_vaccine(),
-            const SizedBox(height: 20,),
-            const button_calendar_widget(),
-            const SizedBox(height: 20,),
-            const child_healthcard_widget(),
+            SizedBox(height: 25),
+            button_register_widget(),
+            SizedBox(height: 20,),
+            button_type_vaccine(),
+            SizedBox(height: 20,),
+            button_calendar_widget(),
+            SizedBox(height: 20,),
+            child_healthcard_widget(),
           ],
         ),
       ),

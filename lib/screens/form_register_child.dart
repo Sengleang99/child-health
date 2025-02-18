@@ -130,13 +130,14 @@ class _FormInputState extends State<FormInputScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "Registration",
+          "Form Register",
           style: TextStyle(
             fontWeight: FontWeight.w400,
-            fontSize: 23,
+            fontSize: 18,
             color: Colors.white,  // Set text color to white for visibility on blue
           ),
         ),
+        centerTitle: true,
         backgroundColor: const Color(0xFF007BFF),  // Set AppBar color to blue
         iconTheme: const IconThemeData(color: Colors.white),  // Set back icon color to white
         elevation: 0,  // Optional: Removes shadow under the AppBar
@@ -196,7 +197,7 @@ class _FormInputState extends State<FormInputScreen> {
                         label: "Enter Hospital",
                         validationMessage: 'Please enter hospital'),
 
-                    const SizedBox(height: 85),
+                    const SizedBox(height: 20),
                     ElevatedButton(
                       onPressed: () {
                         if (_formKey.currentState?.validate() ?? false) {

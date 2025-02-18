@@ -1,3 +1,4 @@
+import 'package:child_hearth/widgets/schedule/card_schedule_widget.dart';
 import 'package:flutter/material.dart';
 
 class ScheduleScreen extends StatelessWidget {
@@ -5,17 +6,28 @@ class ScheduleScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          "Schedule",
-          style: TextStyle(color: Colors.white),
+    return const Padding(
+      padding: EdgeInsets.only(top: 50, right: 25, left: 25),
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            Text(
+                "Calendar", style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 24,
+              color: Colors.lightBlueAccent),
+            ),
+            SizedBox(height: 20,),
+            // child 1
+            CardScheduleWidget(),
+            SizedBox(height: 15,),
+            CardScheduleWidget(),
+            // child 2
+          ],
         ),
-        backgroundColor: const Color(0xFF007BFF),
-      ),
-      body: const Center(
-        child: Text("Welcome to the Schedule Screen!"),
       ),
     );
   }
 }
+
+

@@ -21,9 +21,9 @@ class Child_Detail  extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "Children Details",
+          "Details",
           style: TextStyle(
-            fontSize: 23,
+            fontSize: 18,
             fontWeight: FontWeight.w400,
             color: Colors.white,
           ),
@@ -31,6 +31,7 @@ class Child_Detail  extends StatelessWidget {
         backgroundColor: const Color(0xFF007BFF),
         iconTheme: const IconThemeData(color: Colors.white),
         elevation: 0,
+        centerTitle: true,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {

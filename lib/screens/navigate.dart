@@ -1,3 +1,4 @@
+import 'package:child_hearth/screens/schedule.dart';
 import 'package:flutter/material.dart';
 import 'package:child_hearth/screens/homescreen.dart';
 import 'package:child_hearth/screens/notification.dart';
@@ -17,6 +18,7 @@ class _NavigateState extends State<NavigateScreen> {
 
   final List<Widget> _pages = [
     const HomeScreen(),
+    const ScheduleScreen(),
     const NotificationScreen(),
     const ProfileScreen(),
   ];
@@ -51,6 +53,10 @@ class _NavigateState extends State<NavigateScreen> {
           BottomNavigationBarItem(
             icon: Icon(Icons.home_outlined, size: 30),
             label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.calendar_month, size: 30),
+            label: 'Scheduld',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.notifications_none, size: 30),
