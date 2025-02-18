@@ -132,7 +132,7 @@ class _FormInputState extends State<FormInputScreen> {
         title: const Text(
           "Form Register",
           style: TextStyle(
-            fontWeight: FontWeight.w400,
+            fontWeight: FontWeight.w500,
             fontSize: 18,
             color: Colors.white,  // Set text color to white for visibility on blue
           ),

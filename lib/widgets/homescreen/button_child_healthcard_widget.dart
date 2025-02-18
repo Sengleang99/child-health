@@ -1,4 +1,6 @@
+import 'package:child_hearth/screens/child_card_health.dart';
 import 'package:flutter/material.dart';
+import 'package:swipeable_page_route/swipeable_page_route.dart';
 
 class child_healthcard_widget extends StatelessWidget {
   const child_healthcard_widget({
@@ -9,7 +11,9 @@ class child_healthcard_widget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        print('object');
+        Navigator.of(context).push(SwipeablePageRoute(
+          builder: (BuildContext context) => const ChildCardHealth(),
+        ));
       },
       style: ElevatedButton.styleFrom(
         backgroundColor: Colors.white, // White background

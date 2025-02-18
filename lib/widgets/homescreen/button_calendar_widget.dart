@@ -1,4 +1,6 @@
+import 'package:child_hearth/screens/calendar.dart';
 import 'package:flutter/material.dart';
+import 'package:swipeable_page_route/swipeable_page_route.dart';
 
 class button_calendar_widget extends StatelessWidget {
   const button_calendar_widget({
@@ -9,7 +11,9 @@ class button_calendar_widget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        print('object');
+        Navigator.of(context).push(SwipeablePageRoute(
+          builder: (BuildContext context) => const CalendarScreen(),
+        ));
       },
       style: ElevatedButton.styleFrom(
         backgroundColor: Colors.white, // White background

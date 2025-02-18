@@ -21,10 +21,10 @@ class Child_Detail  extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "Details",
+          "Child Information",
           style: TextStyle(
             fontSize: 18,
-            fontWeight: FontWeight.w400,
+            fontWeight: FontWeight.w500,
             color: Colors.white,
           ),
         ),

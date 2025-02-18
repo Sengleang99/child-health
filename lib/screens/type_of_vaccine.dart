@@ -77,6 +77,7 @@ class TypeOfVaccine extends StatelessWidget {
               title,
               style: const TextStyle(
                 fontSize: 16,
+                fontWeight: FontWeight.w400,
                 color: Colors.black87,
               ),
             ),

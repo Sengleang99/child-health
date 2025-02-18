@@ -38,7 +38,7 @@ class card_profile_widget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+      margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 25),
       elevation: 1,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
@@ -52,11 +52,13 @@ class card_profile_widget extends StatelessWidget {
                 title: "Setting",
                 onPressed: (){}
             ),
+            const Divider(height: 20, thickness: 1, color: Colors.grey),
             _buildProfileOption(
                 icon: Icons.child_care,
                 title: "Children",
                 onPressed: (){}
             ),
+            const Divider(height: 20, thickness: 1, color: Colors.black26),
             _buildProfileOption(
                 icon: Icons.logout,
                 title: "Log out",
