@@ -1,4 +1,8 @@
+import 'package:child_hearth/screens/pills.dart';
+import 'package:child_hearth/screens/supplements.dart';
+import 'package:child_hearth/widgets/child_card_health/button.dart';
 import 'package:flutter/material.dart';
+import 'package:swipeable_page_route/swipeable_page_route.dart';
 
 class ChildCardHealth extends StatelessWidget {
   const ChildCardHealth ({super.key});
@@ -6,6 +10,7 @@ class ChildCardHealth extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey.shade200,
       appBar: AppBar(
         title: const Text(
           "Child Card Health",
@@ -26,13 +31,57 @@ class ChildCardHealth extends StatelessWidget {
           },
         ),
       ),
-      body: const Center(
-        child: Text("Emty data !!!", style: TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 28,
-          color: Colors.black54
-        ),),
+      body: SafeArea(
+        child: Column(
+          children: [
+            const Center(
+              child: Padding(
+                padding: EdgeInsets.only(top: 20),
+                child: Text(
+                  "Record of vaccinations for children",
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.blueAccent,
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 20),
+            ButtonChildCard(
+              buttons: [
+                ButtonData(
+                  label: "Taking nutritional supplements",
+                  icon: Icons.water_drop,
+                  iconBackgroundColor: Colors.blueAccent,
+                  onPressed: () {
+                    Navigator.of(context).push(SwipeablePageRoute(
+                      builder: (BuildContext context) => Supplements(),
+                    ));
+                  },
+                ),
+                ButtonData(
+                  label: "Receiving contraceptive pills",
+                  icon: Icons.medication_rounded,
+                  iconBackgroundColor: Colors.greenAccent,
+                  onPressed: () {
+                    Navigator.of(context).push(SwipeablePageRoute(
+                      builder: (BuildContext context) => PillsScreen(),
+                    ));
+                  },
+                ),
+                ButtonData(
+                  label: "Receiving vaccinations",
+                  icon: Icons.vaccines,
+                  iconBackgroundColor: Colors.orangeAccent,
+                  onPressed: () {},
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
 }
+

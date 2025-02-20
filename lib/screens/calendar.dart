@@ -11,52 +11,54 @@ class CalendarScreen extends StatelessWidget {
     // Define the vaccination schedules
     List<VaccinationSchedule> schedules = [
       VaccinationSchedule(
+        age: "When a baby is born,",
+        vaccinations: [
+          'BCG',
+          'Hep B doses at birth',
+        ],
+      ),
+      VaccinationSchedule(
         age: "When the child is 6 weeks old",
         vaccinations: [
-          'HepB-Hib',
-          'PCV 1',
+          'HepB-Hib'
+              'PCV 1',
           'Oral Polio',
           'DTP',
           'PCV13',
-          'Dep-Hep B-Hib 1',
-        ],
+          'Dep-Hep B-Hib 1'
+
+        ]
       ),
       VaccinationSchedule(
         age: "When the child is 10 weeks old",
         vaccinations: [
-          'HepB-Hib 2',
-          'PCV 2',
-          'Oral Polio 2',
-          'DTP 2',
+          'OPV 2',
+          'DPT-Hep B-Hib 2',
+          'PCV',
         ],
       ),
       VaccinationSchedule(
-        age: "When the child is 6 weeks old",
+        age: "When the child is 14 weeks old",
         vaccinations: [
-          'HepB-Hib',
+          'OPV 3',
           'PCV 1',
-          'Oral Polio',
-          'DTP',
-          'PCV13',
-          'Dep-Hep B-Hib 1',
+          'DPT-Hep B-Hib 3',
+          'PCV 3',
+          'IPV',
         ],
       ),
       VaccinationSchedule(
-        age: "When the child is 14 weeks old",
+        age: "When the child is 38 weeks old",
         vaccinations: [
-          'HepB-Hib 3',
-          'PCV 3',
-          'Oral Polio 3',
-          'DTP 3',
+          'MR1',
         ],
       ),
+
       VaccinationSchedule(
-        age: "When the child is 14 weeks old",
+        age: "When the child is 77 weeks old",
         vaccinations: [
-          'HepB-Hib 3',
-          'PCV 3',
-          'Oral Polio 3',
-          'DTP 3',
+          'MR2',
+          'MR9(Mesales Rubella)'
         ],
       ),
     ];

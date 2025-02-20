@@ -24,7 +24,7 @@ class ScheduleScreen extends StatelessWidget {
     ];
 
     return Padding(
-      padding: const EdgeInsets.only(top: 50, right: 15, left: 15),
+      padding: const EdgeInsets.only(top: 55, right: 15, left: 15),
       child: SingleChildScrollView(
         child: Column(
           children: [
@@ -33,7 +33,7 @@ class ScheduleScreen extends StatelessWidget {
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 24,
-                color: Colors.lightBlueAccent,
+                color: Colors.blueAccent,
               ),
             ),
             const SizedBox(height: 20),

@@ -17,28 +17,29 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
 
-    return const SingleChildScrollView(
+    return const  SingleChildScrollView(
       child: SafeArea(
         child: Column(
           children: [
             profile_widget(),
             SizedBox(height: 20),
-            infor_child_widget(
-            ),
+            infor_child_widget(),
             SizedBox(height: 25),
             button_register_widget(),
             SizedBox(height: 20,),
-            button_type_vaccine(),
+            child_healthcard_widget(),
             SizedBox(height: 20,),
             button_calendar_widget(),
             SizedBox(height: 20,),
-            child_healthcard_widget(),
+            button_type_vaccine(),
           ],
         ),
       ),
     );
   }
 }
+
+
 
 
 

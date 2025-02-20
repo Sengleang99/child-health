@@ -4,18 +4,13 @@ class TypeOfVaccine extends StatelessWidget {
   TypeOfVaccine({super.key});
 
   final List<Map<String, String>> vaccineData = [
-    {"title": "Hepatitis B vaccine (HepBbirth)"},
     {"title": "Tuberculosis vaccine (BCG)"},
-    {"title": "Polio vaccine (OPV)"},
-    {"title": "Tetanus vaccine"},
-    {"title": "Measles-Rubella (MR) vaccine"},
-    {"title": "Pneumonia vaccine - inflammation"},
     {"title": "Hepatitis B vaccine (HepBbirth)"},
-    {"title": "Tuberculosis vaccine (BCG)"},
     {"title": "Polio vaccine (OPV)"},
+    {"title": "Polio vaccine (IPV)"},
     {"title": "Tetanus vaccine"},
+    {"title": "Pneumonia vaccine - inflammation..."},
     {"title": "Measles-Rubella (MR) vaccine"},
-    {"title": "Pneumonia vaccine - inflammation"},
   ];
 
   @override
@@ -70,21 +65,17 @@ class TypeOfVaccine extends StatelessWidget {
         // Handle button press (navigate to details page, etc.)
       },
       child: Padding(
-        padding: const EdgeInsets.only(left: 30, right: 20),
+        padding: EdgeInsets.only(left: 30, right: 30),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               title,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w400,
                 color: Colors.black87,
               ),
-            ),
-            const Spacer(),
-            const Icon(
-              Icons.arrow_forward_ios,
-              color: Colors.black45,
             ),
           ],
         ),

@@ -35,13 +35,15 @@ class button_calendar_widget extends StatelessWidget {
       ),
       child: SizedBox(
         width: MediaQuery.of(context).size.width * 0.8, // 80% of the screen width
-        child: const Row(
+        child:  Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
-              Icons.calendar_today_rounded,
-              color: Colors.greenAccent,
-              size: 30,
+            CircleAvatar(
+              backgroundColor: Colors.greenAccent.withOpacity(0.3),
+              child: Icon(
+                Icons.calendar_today_rounded,
+                color: Colors.greenAccent,
+              ),
             ), // Person add icon
             SizedBox(width: 10),
             Text(

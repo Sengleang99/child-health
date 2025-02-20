@@ -32,20 +32,26 @@ class button_type_vaccine extends StatelessWidget {
       ),
       child: SizedBox(
         width: MediaQuery.of(context).size.width * 0.8, // 80% of the screen width
-        child: const Row(
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.vaccines, color: Colors.blueAccent,size: 30,), // Person add icon
-            SizedBox(width: 10),
-            Text(
+            CircleAvatar(
+              backgroundColor: Colors.blueAccent.withOpacity(0.3),
+              child: const Icon(
+                Icons.vaccines,
+                color: Colors.blueAccent,
+              ),
+            ), // Person add icon
+            const SizedBox(width: 10),
+            const Text(
               'Type of Vaccine',
               style: TextStyle(
                   color: Colors.black87,
                   fontSize: 16, fontWeight: FontWeight.w400
               ),
             ),
-            Spacer(), // Pushes the arrow to the end
-            Icon(
+            const Spacer(), // Pushes the arrow to the end
+            const Icon(
                 Icons.arrow_forward_ios,
                 color: Colors.black45
             ), // Arrow icon at the end
