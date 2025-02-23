@@ -1,4 +1,6 @@
-import 'package:child_hearth/screens/signIn.dart';
+import 'package:child_hearth/screens/homescreen.dart';
+import 'package:child_hearth/screens/navigate.dart';
+import 'package:child_hearth/services/authentication.dart';
 import 'package:flutter/material.dart';
 import 'package:swipeable_page_route/swipeable_page_route.dart';
 
@@ -10,21 +12,54 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
-  bool _isPasswordVisible = false; // State variable for password visibility
+  bool _isPasswordVisible = false;
 
-  // Helper method for text fields
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
+  bool _isLoading = false; // To show loading indicator
+
+  // Sign-up function
+  void _signUpUser() async {
+    setState(() {
+      _isLoading = true;
+    });
+
+    String res = await AuthService().signUpUser(
+      name: _nameController.text,
+      email: _emailController.text,
+      password: _passwordController.text,
+    );
+
+    setState(() {
+      _isLoading = false;
+    });
+
+    if (res == "successfully") {
+      Navigator.of(context).pushReplacement(SwipeablePageRoute(
+        builder: (BuildContext context) => const HomeScreen(),
+      ));
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(res)),
+      );
+    }
+  }
+
+  // Custom text field widget
   Widget buildTextField({
     required String labelText,
     required Icon prefixIcon,
+    required TextEditingController controller,
     bool obscureText = false,
     IconButton? suffixIcon,
-    required Function(String) onChanged,
   }) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 25.0),
       child: TextField(
+        controller: controller,
         obscureText: obscureText,
-        onChanged: onChanged,
         decoration: InputDecoration(
           labelText: labelText,
           labelStyle: const TextStyle(color: Colors.grey),
@@ -71,24 +106,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   buildTextField(
                     labelText: 'Enter Username',
                     prefixIcon: const Icon(Icons.person, color: Colors.blue),
-                    onChanged: (value) {
-                      // Handle username change
-                      print('Username: $value');
-                    },
+                    controller: _nameController,
                   ),
                   const SizedBox(height: 25),
                   buildTextField(
                     labelText: 'Enter Email',
                     prefixIcon: const Icon(Icons.email, color: Colors.blue),
-                    onChanged: (value) {
-                      // Handle email change
-                      print('Email: $value');
-                    },
+                    controller: _emailController,
                   ),
                   const SizedBox(height: 25),
                   buildTextField(
                     labelText: 'Enter Password',
                     prefixIcon: const Icon(Icons.lock, color: Colors.blue),
+                    controller: _passwordController,
                     obscureText: !_isPasswordVisible,
                     suffixIcon: IconButton(
                       icon: Icon(
@@ -103,18 +133,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         });
                       },
                     ),
-                    onChanged: (value) {
-                      // Handle password change
-                      print('Password: $value');
-                    },
                   ),
                   const SizedBox(height: 40),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 23),
                     child: ElevatedButton(
-                      onPressed: () {
-                        print('Sign Up Button Pressed');
-                      },
+                      onPressed: _isLoading ? null : _signUpUser,
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xFF007BFF),
                         padding: const EdgeInsets.symmetric(vertical: 15),
@@ -125,7 +149,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         ),
                         minimumSize: const Size(double.infinity, 53),
                       ),
-                      child: const Text(
+                      child: _isLoading
+                          ? const CircularProgressIndicator(color: Colors.white)
+                          : const Text(
                         'Sign Up',
                         style: TextStyle(
                             color: Colors.white,
@@ -139,7 +165,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     onPressed: () {
                       Navigator.of(context).push(SwipeablePageRoute(
                         builder: (BuildContext context) =>
-                        const SignInScreen(),
+                        const NavigateScreen(),
                       ));
                     },
                     child: const Text(
